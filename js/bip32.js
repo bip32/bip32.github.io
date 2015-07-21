@@ -13,6 +13,10 @@ var LITECOIN_MAINNET_PUBLIC = 0x019da462;
 var LITECOIN_MAINNET_PRIVATE = 0x019d9cfe;
 var LITECOIN_TESTNET_PUBLIC = 0x0436f6e1;
 var LITECOIN_TESTNET_PRIVATE = 0x0436ef7d;
+var SHADOW_MAINNET_PUBLIC = 0xEE80286A;
+var SHADOW_MAINNET_PRIVATE = 0xEE8031E8;
+var SHADOW_TESTNET_PUBLIC = 0x76C0FDFB;
+var SHADOW_TESTNET_PRIVATE = 0x76C1077A;
 
 var BIP32 = function(bytes) {
     // decode base58
@@ -52,7 +56,9 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == DOGECOIN_TESTNET_PRIVATE ||
          this.version == JUMBUCKS_MAINNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PRIVATE ||
-         this.version == LITECOIN_TESTNET_PRIVATE );
+         this.version == LITECOIN_TESTNET_PRIVATE ||
+         this.version == SHADOW_MAINNET_PRIVATE ||  
+         this.version == SHADOW_TESTNET_PRIVATE );
 
     var is_public = 
         (this.version == BITCOIN_MAINNET_PUBLIC  ||
@@ -61,7 +67,9 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == DOGECOIN_TESTNET_PUBLIC ||
          this.version == JUMBUCKS_MAINNET_PUBLIC ||
          this.version == LITECOIN_MAINNET_PUBLIC ||
-         this.version == LITECOIN_TESTNET_PUBLIC );
+         this.version == LITECOIN_TESTNET_PUBLIC ||
+         this.version == SHADOW_MAINNET_PUBLIC ||  
+         this.version == SHADOW_TESTNET_PUBLIC );
 
     if( is_private && key_bytes[0] == 0 ) {
         this.eckey = new Bitcoin.ECKey(key_bytes.slice(1, 33));
@@ -118,6 +126,14 @@ BIP32.prototype.build_extended_public_key = function() {
     case LITECOIN_TESTNET_PUBLIC:
     case LITECOIN_TESTNET_PRIVATE:
         v = LITECOIN_TESTNET_PUBLIC;
+        break;
+    case SHADOW_MAINNET_PUBLIC:  
+    case SHADOW_MAINNET_PRIVATE:  
+        v = SHADOW_MAINNET_PUBLIC;  
+        break;
+    case SHADOW_TESTNET_PUBLIC:  
+    case SHADOW_TESTNET_PRIVATE:  
+        v = SHADOW_TESTNET_PUBLIC;  
         break;
      default:
         throw new Error("Unknown version");
@@ -255,7 +271,9 @@ BIP32.prototype.derive_child = function(i) {
          this.version == DOGECOIN_TESTNET_PRIVATE ||
          this.version == JUMBUCKS_MAINNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PRIVATE ||
-         this.version == LITECOIN_TESTNET_PRIVATE);
+         this.version == LITECOIN_TESTNET_PRIVATE ||
+         this.version == SHADOW_MAINNET_PRIVATE ||  
+         this.version == SHADOW_TESTNET_PRIVATE );
 
     if( use_private && (!this.has_private_key || !is_private) ) throw new Error("Cannot do private key derivation without private key");
 

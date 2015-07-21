@@ -68,6 +68,22 @@
             private_prefix: 0x6f+0x80,
             bip32_public: LITECOIN_TESTNET_PUBLIC,
             bip32_private: LITECOIN_TESTNET_PRIVATE
+        },
+        sdc_main: {
+            name: "Shadow",
+            network: "Mainnet",
+            prefix: 0x3f,
+            private_prefix: 0x3f+0x80,
+            bip32_public: SHADOW_MAINNET_PUBLIC,  
+            bip32_private: SHADOW_MAINNET_PRIVATE  
+        },
+        sdc_test: {
+            name: "Shadow",
+            network: "Testnet",
+            prefix: 0x7f,
+            private_prefix: 0x7f+0x80,
+            bip32_public: SHADOW_TESTNET_PUBLIC,  
+            bip32_private: SHADOW_TESTNET_PRIVATE  
         }
     };
 
