@@ -70,7 +70,7 @@
             bip32_private: LITECOIN_TESTNET_PRIVATE
         },
         sdc_main: {
-            name: "Shadow",
+            name: "ShadowCash",
             network: "Mainnet",
             prefix: 0x3f,
             private_prefix: 0x3f+0x80,
@@ -78,7 +78,7 @@
             bip32_private: SHADOW_MAINNET_PRIVATE  
         },
         sdc_test: {
-            name: "Shadow",
+            name: "ShadowCash",
             network: "Testnet",
             prefix: 0x7f,
             private_prefix: 0x7f+0x80,
