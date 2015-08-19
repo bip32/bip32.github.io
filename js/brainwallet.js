@@ -53,6 +53,14 @@
             bip32_public: JUMBUCKS_MAINNET_PUBLIC,
             bip32_private: JUMBUCKS_MAINNET_PRIVATE
         },
+        bcy_test: {
+            name: "BlockCypher",
+            network: "Testnet",
+            prefix: 0x1b,
+            private_prefix: 0x49,
+            bip32_public: BLOCKCYPHER_TESTNET_PUBLIC,
+            bip32_private: BLOCKCYPHER_TESTNET_PRIVATE
+        },
         ltc_main: {
             name: "Litecoin",
             network: "Mainnet",

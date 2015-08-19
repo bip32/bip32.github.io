@@ -9,6 +9,8 @@ var DOGECOIN_TESTNET_PUBLIC = 0x0432a9a8;
 var DOGECOIN_TESTNET_PRIVATE = 0x0432a243;
 var JUMBUCKS_MAINNET_PUBLIC = 0x037a689a;
 var JUMBUCKS_MAINNET_PRIVATE = 0x037a6460;
+var BLOCKCYPHER_TESTNET_PUBLIC = 0x2d413ff;
+var BLOCKCYPHER_TESTNET_PRIVATE = 0x2d40fc3;
 var LITECOIN_MAINNET_PUBLIC = 0x019da462;
 var LITECOIN_MAINNET_PRIVATE = 0x019d9cfe;
 var LITECOIN_TESTNET_PUBLIC = 0x0436f6e1;
@@ -51,6 +53,7 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == DOGECOIN_MAINNET_PRIVATE ||
          this.version == DOGECOIN_TESTNET_PRIVATE ||
          this.version == JUMBUCKS_MAINNET_PRIVATE ||
+         this.version == BLOCKCYPHER_TESTNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PRIVATE ||
          this.version == LITECOIN_TESTNET_PRIVATE );
 
@@ -60,6 +63,7 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == DOGECOIN_MAINNET_PUBLIC ||
          this.version == DOGECOIN_TESTNET_PUBLIC ||
          this.version == JUMBUCKS_MAINNET_PUBLIC ||
+         this.version == BLOCKCYPHER_TESTNET_PUBLIC ||
          this.version == LITECOIN_MAINNET_PUBLIC ||
          this.version == LITECOIN_TESTNET_PUBLIC );
 
@@ -110,6 +114,10 @@ BIP32.prototype.build_extended_public_key = function() {
     case JUMBUCKS_MAINNET_PUBLIC:
     case JUMBUCKS_MAINNET_PRIVATE:
         v = JUMBUCKS_MAINNET_PUBLIC;
+        break;
+    case BLOCKCYPHER_TESTNET_PUBLIC:
+    case BLOCKCYPHER_TESTNET_PRIVATE:
+        v = BLOCKCYPHER_TESTNET_PUBLIC;
         break;
     case LITECOIN_MAINNET_PUBLIC:
     case LITECOIN_MAINNET_PRIVATE:
@@ -254,6 +262,7 @@ BIP32.prototype.derive_child = function(i) {
          this.version == DOGECOIN_MAINNET_PRIVATE ||
          this.version == DOGECOIN_TESTNET_PRIVATE ||
          this.version == JUMBUCKS_MAINNET_PRIVATE ||
+         this.version == BLOCKCYPHER_TESTNET_PRIVATE ||
          this.version == LITECOIN_MAINNET_PRIVATE ||
          this.version == LITECOIN_TESTNET_PRIVATE);
 
