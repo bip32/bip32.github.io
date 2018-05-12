@@ -21,6 +21,14 @@
             bip32_public: BITCOIN_MAINNET_PUBLIC,
             bip32_private: BITCOIN_MAINNET_PRIVATE
         },
+        polis_main: {
+            name: "Polis",
+            network: "Mainnet",
+            prefix: 0x37,
+            private_prefix: 0x37+0x80,
+            bip32_public: POLIS_MAINNET_PUBLIC,
+            bip32_private: POLIS_MAINNET_PRIVATE
+        },
         btc_test: {
             name: "Bitcoin",
             network: "Testnet",
