@@ -7,7 +7,9 @@ var BITCOIN_CASH_MAINNET_PUBLIC = 0x02cfc6c2;    // I'm starting to wonder if ha
 var BITCOIN_CASH_MAINNET_PRIVATE = 0x02cfbf5d;   // Perhaps it would be better to consistently use Bitcoin's versions (xprv/xpub) and follow
 var BITCOIN_CASH_TESTNET_PUBLIC = 0x02d5830e;    // BIP44.  That may be a change for the future.  Technically, all these version codes do anyway
 var BITCOIN_CASH_TESTNET_PRIVATE = 0x02d57ba9;   // is to make sure you're using the right bip32 chain on the right coin. The underlying private key
-var DOGECOIN_MAINNET_PUBLIC = 0x02facafd;        // and chain code are the same regardless of version.
+var BITCORE_MAINNET_PUBLIC = 0x0488b21e;         // and chain code are the same regardless of version.
+var BITCORE_MAINNET_PRIVATE = 0x0488ade4;
+var DOGECOIN_MAINNET_PUBLIC = 0x02facafd;
 var DOGECOIN_MAINNET_PRIVATE = 0x02fac398;
 var DOGECOIN_TESTNET_PUBLIC = 0x0432a9a8;
 var DOGECOIN_TESTNET_PRIVATE = 0x0432a243;
@@ -54,6 +56,7 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == BITCOIN_TESTNET_PRIVATE       ||
          this.version == BITCOIN_CASH_MAINNET_PRIVATE  ||
          this.version == BITCOIN_CASH_TESTNET_PRIVATE  ||
+         this.version == BITCORE_MAINNET_PRIVATE      ||
          this.version == DOGECOIN_MAINNET_PRIVATE      ||
          this.version == DOGECOIN_TESTNET_PRIVATE      ||
          this.version == JUMBUCKS_MAINNET_PRIVATE      ||
@@ -65,6 +68,7 @@ BIP32.prototype.init_from_bytes = function(bytes) {
          this.version == BITCOIN_TESTNET_PUBLIC       ||
          this.version == BITCOIN_CASH_MAINNET_PUBLIC  ||
          this.version == BITCOIN_CASH_TESTNET_PUBLIC  ||
+         this.version == BITCORE_MAINNET_PUBLIC      ||
          this.version == DOGECOIN_MAINNET_PUBLIC      ||
          this.version == DOGECOIN_TESTNET_PUBLIC      ||
          this.version == JUMBUCKS_MAINNET_PUBLIC      ||
@@ -114,6 +118,10 @@ BIP32.prototype.build_extended_public_key = function() {
     case BITCOIN_CASH_TESTNET_PUBLIC:
     case BITCOIN_CASH_TESTNET_PRIVATE:
         v = BITCOIN_CASH_TESTNET_PUBLIC;
+        break;
+    case BITCORE_MAINNET_PUBLIC:
+    case BITCORE_MAINNET_PRIVATE:
+        v = BITCORE_MAINNET_PUBLIC;
         break;
     case DOGECOIN_MAINNET_PUBLIC:
     case DOGECOIN_MAINNET_PRIVATE:
@@ -269,6 +277,7 @@ BIP32.prototype.derive_child = function(i) {
          this.version == BITCOIN_TESTNET_PRIVATE       ||
          this.version == BITCOIN_CASH_MAINNET_PRIVATE  ||
          this.version == BITCOIN_CASH_TESTNET_PRIVATE  ||
+         this.version == BITCORE_MAINNET_PRIVATE      ||
          this.version == DOGECOIN_MAINNET_PRIVATE      ||
          this.version == DOGECOIN_TESTNET_PRIVATE      ||
          this.version == JUMBUCKS_MAINNET_PRIVATE      ||

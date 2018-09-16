@@ -45,6 +45,14 @@
             bip32_public: BITCOIN_CASH_TESTNET_PUBLIC,
             bip32_private: BITCOIN_CASH_TESTNET_PRIVATE
         },
+        btx_main: {
+            name: "BitCore",
+            network: "Mainnet",
+            prefix: 0x03,
+            private_prefix: 0x03+0x80,
+            bip32_public: BITCORE_MAINNET_PUBLIC,
+            bip32_private: BITCORE_MAINNET_PRIVATE
+        },
         doge_main: {
             name: "Dogecoin",
             network: "Mainnet",
