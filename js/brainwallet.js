@@ -61,6 +61,22 @@
             bip32_public: DOGECOIN_TESTNET_PUBLIC,
             bip32_private: DOGECOIN_TESTNET_PRIVATE
         },
+        ftc_main: {
+            name: "Feathercoin",
+            network: "Mainnet",
+            prefix: 0x0e,
+            private_prefix: 0x0e+0x80,
+            bip32_public: FEATHERCOIN_MAINNET_PUBLIC,
+            bip32_private: FEATHERCOIN_MAINNET_PRIVATE
+        },
+        ftc_test: {
+            name: "Feathercoin",
+            network: "Testnet",
+            prefix: 0x6f,
+            private_prefix: 0x6f+0x80,
+            bip32_public: FEATHERCOIN_TESTNET_PUBLIC,
+            bip32_private: FEATHERCOIN_TESTNET_PRIVATE
+        },
         jbs_main: {
             name: "Jumbucks",
             network: "Mainnet",
